@@ -28,10 +28,15 @@ public class Main
         loadTrie(t,"words.small.txt");
         System.out.println(t.toString());
         System.out.printf("There are %d entries in the dictionary%n",t.size());
+        
         //test completions
         List<String> completions = new ArrayList<>();
-        completions=t.autoPredictCompletions("ans", 3);
-        System.out.printf("There are %d words with stem ans",completions.size());
+        String stem=new String();
+        stem="an"; //set stem
+            completions=t.autoPredictCompletions(stem, 5);
+            System.out.printf("There are %d words with stem %s%n",completions.size(),stem);
+            for (String word:completions)
+                System.out.printf("\t -> %s%n",word);
 
     }
     public static void loadTrie(Trie t,String filename)

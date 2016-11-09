@@ -54,7 +54,7 @@ public class Main
         }
         catch(Exception e)
         {
-            System.out.println("Problem with file");
+            System.out.println("Problem loading file");
             e.printStackTrace();
         }
 
